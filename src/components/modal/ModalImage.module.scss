@@ -1,0 +1,21 @@
+.modalImage {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgb(189, 178, 178, 0.7);
+    z-index: 101;
+
+    &.active {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &Container > img{
+        width: 571px;
+        height: auto;
+    }
+}

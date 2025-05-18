@@ -1,0 +1,56 @@
+@use '../base/media' as *;
+
+.img-slide {
+
+    &-1>img {
+        position: absolute;
+        top: 48%;
+        left: 81%;
+        transform: translate(-50%, -50%);
+        width: clamp(210px, 28%, 320px);
+        transition: all 0.3s ease;
+
+        @include desktop {
+            height: auto;
+        }
+
+        @include mobile {
+            position: relative;
+            transform: none;
+            top: 0;
+            left: 0;
+            width: 210px;
+            height: 219px;
+        }
+    }
+
+    &-2 {
+        position: absolute;
+        top: 50%;
+        left: 80%;
+        transform: translate(-50%, -50%);
+        width: clamp(200px, 35%, 369px);
+        transition: all 0.3s ease;
+
+        &>img {
+            @include desktop {
+                height: auto;
+            }
+        }
+    }
+
+    &-3 {
+        position: absolute;
+        top: 53%;
+        left: 78%;
+        transform: translate(-50%, -50%);
+        width: clamp(200px, 35%, 376px);
+        transition: all 0.3s ease;
+
+        &>img {
+            @include desktop {
+                height: auto;
+            }
+        }
+    }
+}

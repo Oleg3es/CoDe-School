@@ -1,0 +1,56 @@
+.swiper-button-next,
+.swiper-button-prev {
+    width: 37px;
+    height: 37px;
+    background-color: var(--color-card);
+    border-radius: 100%;
+
+    &::after {
+        content: '';
+        display: block;
+        width: 24px;
+        height: 24px;
+        background-image: url('/src/assets/icons/Arrow\ 5.svg');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 60%;
+    }
+
+    &.swiper-button-disabled {
+        background-color: var(--color-button);
+        opacity: 1;
+    }
+}
+
+.swiper-button-prev::after{
+    transform: scaleX(-1);
+}
+
+.swiper-button-next {
+
+    &.swiper-button-disabled {
+        background-image: url('/src/assets/icons/Arrow\ 6.svg');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 40%;
+        transform: scaleX(-1);
+
+        &::after {
+            background-image: none;
+        }
+    }
+}
+
+.swiper-button-prev {
+
+    &.swiper-button-disabled {
+         background-image: url('/src/assets/icons/Arrow\ 6.svg');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 40%;
+
+        &::after {
+            background-image: none;
+        }
+    }
+}

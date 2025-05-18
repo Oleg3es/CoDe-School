@@ -1,0 +1,32 @@
+@use '../base/media' as *;
+
+.gallery {
+    margin-top: var(--main-featured-padding-y);
+
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        gap: 20px;
+
+        @include mobile {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    &__item {
+        cursor: pointer;
+
+        &:nth-child(1) {
+            grid-column: span 2;
+            grid-row: span 2;
+        }
+
+        & > img {
+            @include desktop {
+                width: 100%;
+                height: auto;
+            }
+        }
+    }
+}

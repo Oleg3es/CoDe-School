@@ -1,0 +1,100 @@
+@use '../../styles/base/media' as *;
+
+.modalForm {
+    position: fixed;
+    display: none;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 100;
+    background-color: rgb(189, 178, 178, 0.7);
+
+    &.active {
+        display: flex;
+        justify-content: center;
+    }
+
+    &Content {
+        padding: 60px 54px 80px;
+        background-color: rgba(255, 255, 255, 1);
+        max-height: 942;
+        min-width: 635px;
+
+        @media (max-width: 700px) {
+            min-width: 100%;
+        }
+    }
+
+    &Container {
+        display: flex;
+        flex-direction: column;
+        row-gap: 46px;
+
+    }
+
+    &Title {
+        font-size: 32px;
+        font-weight: 400;
+        text-align: center;
+    }
+
+    &Inputs {
+        display: flex;
+        flex-direction: column;
+        row-gap: 24px;
+
+        &Message {
+            display: flex;
+            flex-direction: column;
+            row-gap: 16px;
+            font-size: 16px;
+            font-weight: 500;
+
+            &>textarea {
+                resize: none;
+                min-width: 100%;
+                min-height: 120px;
+                font-weight: 400;
+                border-radius: 10px;
+                padding: 23px 30px;
+
+                @include mobile {
+                    min-height: 100px;
+                }
+            }
+        }
+
+        &Button {
+            border: none;
+            margin-right: auto;
+            background-color: var(--color-button);
+            cursor: pointer;
+            color: rgba(255, 255, 255, 1);
+            border-radius: 82px;
+            height: var(--button-height);
+            padding-inline: 40px;
+            font-size: 20px;
+
+            @media (max-width: 700px) {
+                height: 50px;
+                padding-inline: 38px;
+            }
+
+            &>svg {
+                margin-left: 36px;
+
+                @media (max-width: 700px) {
+                    margin-left: 16px;
+                }
+            }
+        }
+
+        &Policy {
+
+            &>a {
+                color: var(--color-button);
+            }
+        }
+    }
+}

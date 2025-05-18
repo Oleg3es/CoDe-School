@@ -1,0 +1,84 @@
+@use '../base/variables' as *;
+@use '../base/mixins' as *;
+
+.header {
+    height: 50px;
+    background-color: var(--color-blocks);
+    border-radius: var(--border-radius);
+    display: flex;
+    align-items: center;
+    padding: 0 35px 0;
+    position: relative;
+    top: 24px;
+    font-family: var(--font-family);
+
+    &__inner {
+        display: flex;
+        align-items: center;
+        column-gap: 50px;
+        width: 100%;
+
+        @media (max-width: 400px) {
+             column-gap: 21px;
+        }
+    }
+
+    &__nav {
+
+        &-list {
+            display: flex;
+            column-gap: 40px;
+            margin-top: 8px;
+            font-weight: 400;
+        }
+
+        &-item {
+
+            @include hover {
+                color: rgba(241, 85, 37, 1);
+            }
+        }
+    }
+
+    &__contact {
+        display: flex;
+        align-items: center;
+        margin-left: auto;
+        color: var(--color-phone);
+    }
+
+    &__burger-menu {
+        position: relative;
+        cursor: pointer;
+        width: 17px;
+        height: 14px;
+
+        &::after,
+        &::before {
+            position: absolute;
+            content: '';
+            width: 17px;
+            height: 2px;
+            border-radius: 21px;
+            background-color: rgba(241, 85, 37, 1);
+        }
+
+        &::after {
+            top: 0;
+        }
+
+        &::before {
+            bottom: 0;
+        }
+
+        & > div {
+            position: absolute;
+            content: '';
+            top: 6px;
+            width: 17px;
+            height: 2px;
+            border-radius: 21px;
+            background-color: rgba(241, 85, 37, 1);
+        }
+    }
+}

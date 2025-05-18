@@ -1,0 +1,133 @@
+@use '../base/mixins' as *;
+@use '../base/media' as *;
+
+.hero {
+    margin-top: 48px;
+
+    &__slide {
+        display: flex;
+        justify-content: space-between;
+        background-image: url('/src/assets/images/wave.png');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        padding: 52px 80px;
+        border-radius: 80px;
+        position: relative;
+        max-height: 481px;
+        height: 482px;
+
+        @include tablet {
+            height: 422px;
+        }
+
+        @include mobile {
+            align-items: center;
+            flex-direction: column;
+            row-gap: 31px;
+            background-image: url('/src/assets/images/Mask\ group\ \(2\).png');
+            max-height: 609px;
+            height: 0%;
+            padding: 32px 15px 44px;
+        }
+
+        &-info {
+            max-width: 638px;
+
+            @include desktop {
+                max-width: 550px;
+            }
+
+            @include tablet {
+                max-width: 450px;
+            }
+
+            @include mobile {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            &-title {
+                line-height: 46px;
+
+                &-programming {
+                    font-weight: 600;
+
+                    @include mobile {
+                        font-style: italic;
+                    }
+
+                    & > span {
+                        display: none;
+                    }
+                }
+
+                @include mobile {
+                    line-height: 24px;
+                    text-align: center;
+                    max-width: 290px;
+                }
+            }
+
+            &-line {
+                margin: 24px 0;
+                width: 365px;
+                height: 1px;
+                background-color: rgba(222, 222, 222, 1);
+
+                @include mobile {
+                    margin: 16px 0;
+                    width: 100%
+                }
+            }
+
+            &-call {
+                @include fluid-text(16, 12);
+                max-width: 365px;
+
+                @include mobile {
+                    text-align: center;
+                }
+
+                &-btn {
+                    @include reset-button;
+
+                    font-size: 20px;
+                    color: var(--color-text);
+                    background-color: var(--color-button);
+                    height: var(--button-height);
+                    border-radius: 82px;
+                    padding-inline: 40px;
+                    cursor: pointer;
+                    margin-right: auto;
+
+                    @include hover {
+                        background-color: rgba(56, 191, 242, 1);
+                    }
+
+                    @include tablet {
+                        height: 60px;
+                    }
+
+                    @include mobile {
+                        margin: auto;
+                    }
+
+                    @media (max-width: 340px) {
+                        padding-inline: 30px;
+                    }
+
+                    &>svg {
+                        margin-left: 10px;
+                    }
+                }
+            }
+        }
+
+        &-img {
+            @include desktop {
+            }
+        }
+    }
+}

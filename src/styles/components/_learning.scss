@@ -1,0 +1,112 @@
+@use '../base/media' as *;
+@use '../base/mixins' as *;
+
+.learning {
+    margin-top: var(--main-featured-padding-y);
+
+    &-container {
+        max-width: calc(var(--container-width-learning) + var(--container-padding-x) * 2);
+        margin-inline: auto;
+        padding-inline: var(--container-padding-x);
+    }
+
+    &__inner {
+        display: flex;
+        flex-direction: column;
+        row-gap: 34px;
+    }
+
+    &__title {
+        @include fluid-text(46, 24);
+
+        text-align: center;
+        font-weight: 600;
+        line-height: 46px;
+
+        @include mobile {
+            line-height: 26px;
+        }
+    }
+
+    &__cards {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 27px;
+        justify-content: center;
+        min-width: 100%;
+
+        @include mobile {
+            gap: 10px;
+        }
+    }
+
+    &__card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: rgba(234, 242, 245, 1);
+        padding: 50px 35px 0;
+        border-radius: 30px;
+        height: 254px;
+
+        &:nth-child(7) {
+            @include mobile {
+                max-width: 450px;
+                flex: 0 0 100%
+            }
+
+            @media (max-width: 490px) {
+                max-width: 300px;
+            }
+
+            @media (max-width: 340px) {
+                flex: none;
+                max-width: 145px;
+            }
+        }
+
+        @include desktop {
+            height: 230px;
+        }
+
+        @include mobile {
+            padding: 24px 10px 0;
+            height: 175px;
+        }
+
+        @media (max-width: 490px) {
+            max-width: 145px;
+        }
+
+        &>img {
+            @include mobile {
+                width: 40px;
+                height: 40px;
+            }
+        }
+
+        &-title {
+            @include fluid-text(16, 12);
+
+            max-width: 166px;
+            text-align: center;
+            margin-top: 20px;
+
+            @include mobile {
+                margin-top: 14px;
+            }
+        }
+
+        &-description {
+            @include fluid-text(13, 9);
+
+            max-width: 200px;
+            text-align: center;
+            margin-top: 10px;
+
+            @include mobile {
+                margin-top: 6px;
+            }
+        }
+    }
+}
